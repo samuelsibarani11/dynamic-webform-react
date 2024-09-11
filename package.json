@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.2",
+    "flowbite-react": "^0.10.1",
+    "jquery": "^3.7.1",
+    "react-google-recaptcha": "^3.1.0",
+    "react-signature-canvas": "^1.0.6",
+    "react-toastify": "^10.0.5",
+    "uuid": "^10.0.0"
+  }
+}
