@@ -9,7 +9,7 @@ const Dashboard = () => {
       <div className="mx-auto max-w-5xl p-5 flex-col-reverse">
         <div className="text-2xl"> Webform SMP</div>
         <div className="">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus,
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimussss,
           dolorum.
         </div>
       </div>
