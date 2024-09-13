@@ -73,20 +73,31 @@ export const validateForm = (schema, currentSectionIndex, formData) => {
   let formIsValid = true;
 
   const currentSection = schema[currentSectionIndex];
-  if (currentSection.fields) {
-    currentSection.fields.forEach((field) => {
-      if (field.validation?.required) {
-        if (field.type === "camera") {
-          if (!formData[field.name]) {
-            formIsValid = false;
-            errors[field.name] = "This field is required";
-          }
-        } else if (!formData[field.name]) {
-          formIsValid = false;
-          errors[field.name] = "This field is required";
-        }
+  let firstInvalidField = null; // Untuk menyimpan field pertama yang tidak valid
+
+  currentSection.fields.forEach((field) => {
+    if (field.required && !formData[field.name]) {
+      errors[field.name] = `${field.label} Harus Diisi`;
+      formIsValid = false;
+
+      if (!firstInvalidField) {
+        firstInvalidField = field.name; // Set field pertama yang tidak valid
       }
-    });
+    }
+  });
+
+  if (!formIsValid && firstInvalidField) {
+    // Fokus ke field pertama yang tidak valid
+    const invalidFieldElement = document.querySelector(
+      `[name="${firstInvalidField}"]`
+    );
+    if (invalidFieldElement) {
+      invalidFieldElement.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+      invalidFieldElement.focus();
+    }
   }
 
   return { errors, formIsValid };
@@ -94,15 +105,14 @@ export const validateForm = (schema, currentSectionIndex, formData) => {
 
 // Fungsi untuk submit form
 export const submitForm = async (
-  formData,
   schema,
-  signatureData,
-  setFormData,
+  formData,
+  signatureData, // This is the raw signature data
   initialFormData,
+  setFormData,
   setFormErrors,
   setCurrentSectionIndex,
-  setSelfie,
-  setSignatureData
+  setSelfie
 ) => {
   // Filter out 'list' type fields from formData
   const filteredFormData = Object.keys(formData).reduce((acc, key) => {
@@ -132,7 +142,6 @@ export const submitForm = async (
     setFormErrors({});
     setCurrentSectionIndex(0);
     setSelfie(null);
-    setSignatureData(null);
   } catch (error) {
     console.error("Error inserting data:", error.message);
   }

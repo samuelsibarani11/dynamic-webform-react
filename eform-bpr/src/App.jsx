@@ -14,6 +14,12 @@ export default function App() {
     console.log("Form Data:", formData);
   };
 
+  const initialValues = formSchema.reduce((acc, section) => {
+    section.fields.forEach((field) => {
+      acc[field.name] = ''; // Default empty string for each field
+    });
+    return acc;
+  }, {});
   return (
     <>
       <Header />
@@ -23,7 +29,7 @@ export default function App() {
           <Route
             path="/form-ksm"
             element={
-              <DynamicForm schema={formSchema} onSubmit={handleFormSubmit} />
+              <DynamicForm schema={formSchema} initialValues={initialValues} onSubmit={handleFormSubmit} />
             }
           />
         </Routes>

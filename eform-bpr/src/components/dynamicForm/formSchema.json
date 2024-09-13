@@ -25,17 +25,21 @@
       {
         "name": "fullname",
         "label": "Nama Lengkap",
-        "type": "text"
+        "type": "text",
+        "required": true
       },
+
       {
         "name": "birth_place",
         "label": "Tempat Lahir",
-        "type": "text"
+        "type": "text",
+        "required": true
       },
       {
         "name": "birth_date",
         "label": "Tanggal Lahir",
-        "type": "date"
+        "type": "date",
+        "required": true
       },
       {
         "name": "gender",
@@ -44,7 +48,8 @@
         "options": [
           { "value": "Pria", "label": "Pria" },
           { "value": "Wanita", "label": "Wanita" }
-        ]
+        ],
+        "required": true
       },
       {
         "name": "id_type",
@@ -53,7 +58,8 @@
         "options": [
           { "value": "KTP", "label": "KTP" },
           { "value": "SIM", "label": "SIM" }
-        ]
+        ],
+        "required": true
       },
       {
         "name": "id_number",
@@ -61,25 +67,29 @@
         "type": "id_number",
         "inputMode": "numeric",
         "pattern": "[0-9]*",
-        "maxLength": 16
+        "maxLength": 16,
+        "required": true
       },
 
       {
         "name": "address",
         "label": "Alamat KTP",
-        "type": "address"
+        "type": "address",
+        "required": true
       },
       {
         "name": "domicili_address",
         "label": "Alamat Domisili",
         "type": "address",
-        "disabled": true
+        "disabled": true,
+        "required": true
       },
 
       {
         "name": "mother_name",
         "label": "Nama Gadis Ibu Kandung",
-        "type": "text"
+        "type": "text",
+        "required": true
       },
       {
         "name": "home_status",
@@ -89,7 +99,8 @@
           { "value": "Milik Sendiri", "label": "Milik Sendiri" },
           { "value": "Kontrak/Sewa", "label": "Kontrak/Sewa" },
           { "value": "Milik Keluarga", "label": "Milik Keluarga" }
-        ]
+        ],
+        "required": true
       },
       {
         "name": "last_education",
@@ -100,7 +111,8 @@
           { "value": "SMP", "label": "SMP" },
           { "value": "SMA", "label": "SMA" },
           { "value": "Akademi/S1/S2", "label": "Akademi/S1/S2" }
-        ]
+        ],
+        "required": true
       },
       {
         "name": "marital_status",
@@ -110,7 +122,8 @@
           { "value": "Kawin", "label": "Kawin" },
           { "value": "Belum Kawin", "label": "Belum Kawin" },
           { "value": "Cerai", "label": "Cerai" }
-        ]
+        ],
+        "required": true
       },
       {
         "name": "nationality",
@@ -119,13 +132,15 @@
         "options": [
           { "value": "WNI", "label": "WNI" },
           { "value": "WNA", "label": "WNA" }
-        ]
+        ],
+        "required": true
       },
       {
         "name": "mobile_number",
         "label": "Nomor HP/WA",
         "type": "phone_number",
-        "inputMode": "numeric"
+        "inputMode": "numeric",
+        "required": true
       },
       {
         "name": "religion",
@@ -139,12 +154,14 @@
           { "value": "Hindu", "label": "Hindu" },
           { "value": "Buddha", "label": "Buddha" },
           { "value": "Konghucu", "label": "Konghucu" }
-        ]
+        ],
+        "required": true
       },
       {
         "name": "email",
         "label": "Email",
-        "type": "email"
+        "type": "email",
+        "required": true
       }
     ]
   },
@@ -156,7 +173,8 @@
       {
         "name": "occupation",
         "label": "Bidang Pekerjaan",
-        "type": "text"
+        "type": "text",
+        "required": true
       },
       {
         "name": "employement_period",
@@ -165,22 +183,26 @@
         "inputMode": "numeric",
         "validation": {
           "pattern": "^[0-9]*$"
-        }
+        },
+        "required": true
       },
       {
         "name": "office_name",
         "label": "Nama Kantor",
-        "type": "text"
+        "type": "text",
+        "required": true
       },
       {
         "name": "job_title",
         "label": "Pangkat/Jabatan",
-        "type": "text"
+        "type": "text",
+        "required": true
       },
       {
         "name": "office_address",
         "label": "Alamat Kantor",
-        "type": "text"
+        "type": "address",
+        "required": true
       }
     ]
   },
@@ -198,7 +220,8 @@
           { "value": "Hasil Usaha", "label": "Hasil Usaha" },
           { "value": "Hasil Investasi", "label": "Hasil Investasi" },
           { "value": "Lainnya", "label": "Lainnya" }
-        ]
+        ],
+        "required": true
       },
       {
         "name": "income_amount",
@@ -208,12 +231,14 @@
           { "value": "s.d 5jt", "label": "s.d 5jt" },
           { "value": ">5jt s/d 10jt", "label": ">5jt s/d 10jt" },
           { "value": ">10jt", "label": ">10jt" }
-        ]
+        ],
+        "required": true
       },
       {
         "name": "other_income_source",
         "label": "Sumber Pendapatan Lainnya",
-        "type": "text"
+        "type": "text",
+        "required": true
       },
       {
         "name": "other_income_amount",
@@ -222,7 +247,8 @@
         "inputMode": "numeric",
         "validation": {
           "pattern": "^[0-9]*$"
-        }
+        },
+        "required": true
       }
     ]
   },
@@ -238,7 +264,8 @@
         "options": [
           { "value": "Gaji", "label": "Gaji" },
           { "value": "Hasil Usaha", "label": "Hasil Usaha" }
-        ]
+        ],
+        "required": true
       },
       {
         "name": "loan_purpose",
@@ -247,18 +274,21 @@
         "options": [
           { "value": "Tabungan", "label": "Tabungan" },
           { "value": "Deposito", "label": "Deposito" }
-        ]
+        ],
+        "required": true
       },
       {
         "name": "plafond",
         "label": "Setoran Awal",
         "type": "money",
-        "inputMode": "numeric"
+        "inputMode": "numeric",
+        "required": true
       },
       {
         "name": "spouse_name",
         "label": "Nama Ahli Waris",
-        "type": "text"
+        "type": "text",
+        "required": true
       },
       {
         "name": "status",
@@ -269,7 +299,8 @@
           { "value": "2", "label": "Istri" },
           { "value": "3", "label": "Anak" },
           { "value": "4", "label": "Lainnya" }
-        ]
+        ],
+        "required": true
       }
     ]
   },
