@@ -2,25 +2,24 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/prop-types */
 import React, { useState, useRef, useEffect } from "react";
-import RenderField from "./renderField";
-import sectionTitle from "./sectionTitle.json";
-import "./Dynamicform.css";
-import Stepper from "./Stepper";
+import RenderField from "../../../dynamicUtils/RenderField";
+import sectionTitle from "../../dashboard/Dashboard.json";
+
+import "../../../dynamicUtils/DynamicForm.css";
+import Stepper from "../../../dynamicUtils/Stepper";
 
 import {
   initializeFormData,
   validateForm,
   submitForm,
   useFileUpload,
-} from "./formUtils";
+} from "../../../dynamicUtils/FormUtils";
 
 import { Button } from "flowbite-react";
 
-const DynamicForm = ({ schema }) => {
-  // const [name, setName] = useState("");
-  // const [error, setError] = useState("");
-
-  const title = sectionTitle[0].section_title;
+const FormApplyBpr2 = ({ schema }) => {
+  // ketika membuat baru jangan lupa ganti section title + 1
+  const title = sectionTitle[1].title;
 
   if (!Array.isArray(schema)) {
     console.error("Expected schema to be an array", schema);
@@ -120,9 +119,7 @@ const DynamicForm = ({ schema }) => {
         <div className="w-full max-w-4xl bg-white p-8 shadow-xl mt-8 rounded-2xl my-8">
           <form onSubmit={handleSubmit} className="w-full max-w-4xl">
             <>
-              <h1 className="text-lg font-bold mb-4">
-                {currentSection.title} *
-              </h1>
+              <h1 className="text-lg font-bold mb-4">{currentSection.title}</h1>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {currentSection.fields.map((field, index) => (
                   <div key={index} className="form-group">
@@ -174,4 +171,4 @@ const DynamicForm = ({ schema }) => {
   );
 };
 
-export default DynamicForm;
+export default FormApplyBpr2;

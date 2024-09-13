@@ -9,8 +9,8 @@ const Dashboard = () => {
       <div className="mx-auto max-w-5xl p-5 flex-col-reverse">
         <div className="text-2xl"> Webform SMP</div>
         <div className="">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimussss,
-          dolorum.
+          BPR SMP hadirkan fasilitas online untuk pengajuan tanpa datang ke
+          cabang
         </div>
       </div>
       <div className="flex-container mx-auto max-w-5xl p-5">

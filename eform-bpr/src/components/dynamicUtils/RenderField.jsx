@@ -16,7 +16,7 @@ import {
   handleNumberInput,
   formatCurrency,
   parseCurrency,
-} from "./formUtils";
+} from "./FormUtils";
 
 const RenderField = ({
   field,
@@ -24,7 +24,6 @@ const RenderField = ({
   handleChange,
   setFormData,
   uploading,
-  // signatureData,
   setSignatureData,
 }) => {
   const canvasRef = useRef(null);
@@ -106,11 +105,16 @@ const RenderField = ({
   /* => SIGNATURE <= */
   const signatureCanvasRef = useRef(null);
 
+  const [error, setError] = useState("");
+  const checkboxRef = useRef(null);
   switch (field.type) {
     case "phone_number":
       return (
         <div>
-          <Label htmlFor={field.name} value={field.label + "*"} />
+          <div className="flex ">
+            <Label htmlFor={field.name} value={field.label} />
+            {field.required && <div className="text-red-700">&nbsp;*</div>}{" "}
+          </div>
           <input
             type="tel"
             id={field.name}
@@ -134,12 +138,10 @@ const RenderField = ({
     case "file":
       return (
         <div>
-          <label
-            htmlFor={field.name}
-            className="text-gray-700 font-medium mb-2 block"
-          >
-            {field.label}
-          </label>
+          <div className="flex ">
+            <Label htmlFor={field.name} value={field.label} />
+            {field.required && <div className="text-red-700">&nbsp;*</div>}{" "}
+          </div>
           <input
             id={field.name}
             name={field.name}
@@ -160,26 +162,17 @@ const RenderField = ({
     case "address":
       return (
         <div>
-          <Label
+          {/* <Label
             htmlFor={field.name}
             value={field.label}
             className="text-gray-700 font-medium mb-2 block"
-          />
-          <Textarea
-            id={field.name}
-            name={field.name}
-            onChange={handleChangeAdress}
-            rows={3}
-            required={field.validation?.required}
-            value={formData[field.name] || ""}
-            disabled={
-              field.name === "domicili_address"
-                ? formData.domicili_disabled
-                : false
-            }
-          />
+          /> */}
+          <div className="flex text-gray-700 font-medium mb-2 ">
+            <Label htmlFor={field.name} value={field.label} />
+            {field.required && <div className="text-red-700">&nbsp;*</div>}{" "}
+          </div>
           {field.name === "domicili_address" && (
-            <div className="flex items-center mt-2">
+            <div className="flex items-center mb-2">
               <input
                 id="same_as_ktp"
                 name="same_as_ktp"
@@ -195,18 +188,31 @@ const RenderField = ({
               />
             </div>
           )}
+          <Textarea
+            id={field.name}
+            name={field.name}
+            onChange={handleChangeAdress}
+            rows={3}
+            required={field.validation?.required}
+            value={formData[field.name] || ""}
+            disabled={
+              field.name === "domicili_address"
+                ? formData.domicili_disabled
+                : false
+            }
+            className={field.name === "domicili_address" ? "" : "mt-9"}
+          />
         </div>
       );
 
     case "money":
       return (
         <div>
-          <Label
-            htmlFor={field.name}
-            value={field.label}
-            className="text-gray-700 font-medium block"
-          />
-          <div className="flex items-center border border-gray-300 rounded-xl overflow-hidden mt-1">
+          <div className="flex">
+            <Label htmlFor={field.name} value={field.label} />
+            {field.required && <div className="text-red-700">&nbsp;*</div>}{" "}
+          </div>
+          <div className="flex items-center border border-gray-300 rounded-xl overflow-hidden">
             <span className="bg-gray-200 text-gray-700 px-3 py-2">Rp.</span>
             <input
               type="text" // Ubah ke text untuk memudahkan kontrol input
@@ -238,7 +244,10 @@ const RenderField = ({
     case "select":
       return (
         <div>
-          <Label htmlFor={field.name} value={field.label} />
+          <div className="flex">
+            <Label htmlFor={field.name} value={field.label} />
+            {field.required && <div className="text-red-700">&nbsp;*</div>}{" "}
+          </div>
           <Select
             id={field.name}
             name={field.name}
@@ -259,7 +268,10 @@ const RenderField = ({
     case "radio":
       return (
         <div>
-          <Label value={field.label} />
+          <div className="flex">
+            <Label htmlFor={field.name} value={field.label} />
+            {field.required && <div className="text-red-700">&nbsp;*</div>}{" "}
+          </div>
           <div className="flex space-x-4">
             {" "}
             {/* Tambahkan flex dan space-x untuk membuatnya horizontal */}
@@ -386,10 +398,9 @@ const RenderField = ({
           )}
         </div>
       );
-
     case "list":
       return (
-        <div className=" w-full">
+        <div className="w-full">
           <h5 className="text-lg font-bold">{field.label}</h5>
           <ul className="list-disc w-full">
             {field.items.map((item, index) => (
@@ -397,6 +408,23 @@ const RenderField = ({
                 {item}
               </li>
             ))}
+            <input
+              className="mx-5 rounded"
+              type="checkbox"
+              id="agreement"
+              ref={checkboxRef}
+              required
+              onInvalid={(e) => {
+                e.preventDefault();
+                setError("Field ini harus diisi");
+                checkboxRef.current.focus();
+              }}
+              onInput={(e) => setError("")}
+            />
+            <label htmlFor="agreement">
+              Menyatakan bahwa saya setuju dengan pernyataan diatas
+            </label>
+            {error && <p className="text-red-500 mx-5">{error}</p>}
           </ul>
         </div>
       );
@@ -440,7 +468,10 @@ const RenderField = ({
 
       return (
         <div>
-          <Label htmlFor={field.name} value={field.label} />
+          <div className="flex">
+            <Label htmlFor={field.name} value={field.label} />
+            {field.required && <div className="text-red-700">&nbsp;*</div>}{" "}
+          </div>
           <input
             type={field.type}
             id={field.name}
@@ -459,7 +490,10 @@ const RenderField = ({
     case "email":
       return (
         <div>
-          <Label htmlFor={field.name} value={field.label} />
+          <div className="flex">
+            <Label htmlFor={field.name} value={field.label} />
+            {field.required && <div className="text-red-700">&nbsp;*</div>}{" "}
+          </div>
           <input
             type={field.type}
             id={field.name}
@@ -476,7 +510,10 @@ const RenderField = ({
     case "id_number":
       return (
         <div>
-          <Label htmlFor={field.name} value={field.label} />
+          <div className="flex">
+            <Label htmlFor={field.name} value={field.label} />
+            {field.required && <div className="text-red-700">&nbsp;*</div>}{" "}
+          </div>
           <input
             type="text" // Menggunakan text agar bisa memodifikasi input
             id={field.name}
@@ -501,7 +538,10 @@ const RenderField = ({
     case "employement_period":
       return (
         <div>
-          <Label htmlFor={field.name} value={field.label} />
+          <div className="flex">
+            <Label htmlFor={field.name} value={field.label} />
+            {field.required && <div className="text-red-700">&nbsp;*</div>}{" "}
+          </div>
           <input
             type="text" // Menggunakan text agar bisa memodifikasi input
             id={field.name}
@@ -525,21 +565,22 @@ const RenderField = ({
     default:
       return (
         <div>
-          <Label htmlFor={field.name} value={field.label} />
+          <div className="flex">
+            <Label htmlFor={field.name} value={field.label} />
+            {field.required && <div className="text-red-700">&nbsp;*</div>}{" "}
+          </div>
           <input
             type="text"
             id={field.name}
             name={field.name}
             onChange={(e) => {
               const formattedValue = handleAlphabetInput(e.target.value);
-
               // Update formData
               setFormData((prevFormData) => ({
                 ...prevFormData,
                 [field.name]: formattedValue,
               }));
             }}
-            required={field.validation?.required}
             className="w-full border border-gray-300 p-2 rounded-xl"
             value={formData[field.name] || ""}
           />
