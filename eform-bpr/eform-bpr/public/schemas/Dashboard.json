@@ -1,0 +1,77 @@
+[
+  {
+    "title": "Kredit Sertifikasi",
+    "description": "Bawa SK Sertifikasi, SKBM, Buku Tabungan dan slip gaji, legalisir bendahra dan nikmati pinjaman Kredit Sertifikasi",
+    "ctaText": "Ajukan Sekarang »",
+    "ctaLink": "/form-ksm1",
+    "background": "bg-gray-100",
+    "schemaName": "formSchema.json",
+    "table":"loans"
+  },
+  {
+    "title": "Kredit Pegawai Swasta",
+    "description": "Bawa BPJS, Buku Tabungan dan Slip Gaji, dan nikmati Pinjaman Kredit Swasta s/d 100jt, cicilah hanya 400 ribuan*",
+    "ctaText": "Ajukan Sekarang »",
+    "ctaLink": "/form-ksm2",
+    "background": "bg-gray-100",
+    "schemaName": "formSchema2.json",
+    "table":"kredit_pegawai_swasta"
+    
+  },
+  {
+    "title": "Kredit ASN",
+    "description": "Bawa SK Min1, Buku ATM, Surat Pernyataan berwnang, Legalisir Bendahara dan nikmati Pinjaman Kredit ASN",
+    "ctaText": "Ajukan Sekarang »",
+    "ctaLink": "/form-ksm2",
+    "background": "bg-gray-100",
+    "schemaName": "formSchema2.json",
+    "table":""
+  },
+  {
+    "title": "Kredit Pensiunan",
+    "description": "Hanya membawa KARIP, Printout dan Buku Tabungan, anda sudah bisa menikmati Kredit Pensiunan",
+    "ctaText": "Ajukan Sekarang »",
+    "ctaLink": "/form-ksm3",
+    "background": "bg-gray-100",
+    "schemaName": "formSchema2.json",
+    "table":""
+  },
+  {
+    "title": "Kredit PPPK",
+    "description": "Wujudkan impian Anda dengan Kredit PPPK! Menarik untuk Pegawai Pemerintah Dengan Perjanjian Kerja",
+    "ctaText": "Ajukan Sekarang »",
+    "ctaLink": "/form-ksm8",
+    "background": "bg-gray-100",
+    "schemaName": "formSchema2.json",
+    "table":""
+  },
+  {
+    "title": "Kredit Wiraswasta",
+    "description": "Kemudahan dalam mengajukan Kredit Wiraswasta. Proses cepat, suku bunga bersaing, dan syarat yang mudah dipenuhi.",
+    "ctaText": "Ajukan Sekarang »",
+    "ctaLink": "/form-ksm4",
+    "background": "bg-gray-100",
+    "schemaName": "formSchema2.json",
+    "table":""
+  },
+  {
+    "title": "Kredit Multiguna",
+    "description": "Manfaatkan Kredit Multiguna untuk berbagai kebutuhan Anda. Proses cepat, suku bunga kompetitif, dan syarat yang fleksibel untuk mendukung impian Anda!",
+    "ctaText": "Ajukan Sekarang »",
+    "ctaLink": "/form-ksm6",
+    "background": "bg-gray-100",
+    "schemaName": "formSchema2.json",
+    "table":""
+  },
+  {
+    "title": "Kredit Musiman",
+    "description": "Raih peluang dengan Kredit Musiman. Proses cepat, bunga yang menarik, dan persyaratan yang mudah untuk mendukung usaha Anda!",
+    "ctaText": "Ajukan Sekarang »",
+    "ctaLink": "/form-ksm5",
+    "background": "bg-gray-100",
+    "schemaName": "formSchema2.json",
+    "table":""
+  }
+ 
+]
+
