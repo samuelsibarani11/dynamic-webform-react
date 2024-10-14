@@ -12,7 +12,7 @@ const Header = () => {
         <div className="flex justify-between items-center w-full">
           {/* Left Section: Logo */}
           <img
-            src="./src/assets/bpr-asset/bpr-smp-logo.png"
+            src="public/bpr-asset/bpr-smp-logo.png"
             width={125}
             alt="BPR SMP Logo"
           />
@@ -21,7 +21,7 @@ const Header = () => {
           {currentPath !== "/" && (
             <a href="/" className="flex items-center">
               <img
-                src="./src/assets/bpr-asset/home.png"
+                src="public/bpr-asset/home.png"
                 width={120}
                 alt="Home"
               />
