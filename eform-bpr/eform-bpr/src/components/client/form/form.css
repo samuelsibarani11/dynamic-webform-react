@@ -1,6 +1,0 @@
-
-@media (max-width: 640px) { /* 640px is the breakpoint for sm in Tailwind */
-  .step-description {
-    display: none;
-  }
-}
