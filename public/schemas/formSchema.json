@@ -1,0 +1,437 @@
+[
+  {
+    "stepper": "Himbauan",
+    "fields": [
+      {
+        "head": "Langkah Mengajukan KSM",
+        "type": "list-number",
+        "items": [
+          "Data yang saya sampaikan adalah benar.",
+          "Dana yang telah saya setor tidak berasal dari dan/atau untuk tujuan Pencucian Uang (Money Laundering) dan Pendanaan Terorisme.",
+          "Marketing dilarang menerima uang tunai dari nasabah.",
+          "Akan mematuhi seluruh ketentuan dan syarat umum pembukaan rekening yang berlaku di PT. BPR Tata Asia dengan segala perubahannya nanti.",
+          "Pencairan Deposito sebelum tanggal jatuh tempo akan dikenakan denda oleh bank sebesar 5% dari nominal deposito secara prorata."
+        ],
+        "desc": "Untuk mendapatkan keterangan lebih lanjut mengenai persyaratan pengajuan Kredit Sepeda Motor, silakan hubungi Kantor Cabang BPR dan/atau Kantor Cabang BPR Finance Layanan Pembiayaan Sepeda Motor terdekat atau Call Center Pengaduan di 0811 1111 7257.",
+        "desc2": " Pemohon dengan ini menyatakan telah membaca dan memahami sepenuhnya informasi produk Kredit Sepeda Motor yang akan diajukan dan bersedia untuk tunduk pada syarat dan ketentuan yang berlaku.",
+        "style": "list-disc ml-6 mb-4"
+      }
+    ]
+  },
+  {
+    "title": "A. Data Umum",
+    "stepper": "Data Umum",
+    "fields": [
+      {
+        "name": "fullname",
+        "label": "Nama Lengkap",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "birth_place",
+        "label": "Tempat Lahir",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "birth_date",
+        "label": "Tanggal Lahir",
+        "type": "date",
+        "required": true
+      },
+      {
+        "name": "gender",
+        "label": "Jenis Kelamin",
+        "type": "radio",
+        "options": [
+          { "value": "Pria", "label": "Pria" },
+          { "value": "Wanita", "label": "Wanita" }
+        ],
+        "required": true
+      },
+      {
+        "name": "id_type",
+        "label": "Dokumen Identitas",
+        "type": "select",
+        "options": [
+          { "value": "KTP", "label": "KTP" },
+          { "value": "SIM", "label": "SIM" }
+        ],
+        "required": true
+      },
+      {
+        "name": "id_number",
+        "label": "Nomor Identitas",
+        "type": "id_number",
+        "inputMode": "numeric",
+        "pattern": "[0-9]*",
+        "maxLength": 16,
+        "required": true
+      },
+      {
+        "name": "address",
+        "label": "Alamat KTP",
+        "type": "address",
+        "required": true
+      },
+      {
+        "name": "domicili_address",
+        "label": "Alamat Domisili",
+        "type": "address",
+        "disabled": true
+      },
+      {
+        "name": "mother_name",
+        "label": "Nama Gadis Ibu Kandung",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "home_status",
+        "label": "Status Rumah",
+        "type": "radio",
+        "options": [
+          { "value": "Milik Sendiri", "label": "Milik Sendiri" },
+          { "value": "Kontrak/Sewa", "label": "Kontrak/Sewa" },
+          { "value": "Milik Keluarga", "label": "Milik Keluarga" }
+        ],
+        "required": true
+      },
+      {
+        "name": "last_education",
+        "label": "Pendidikan Terakhir",
+        "type": "radio",
+        "options": [
+          { "value": "SD", "label": "SD" },
+          { "value": "SMP", "label": "SMP" },
+          { "value": "SMA", "label": "SMA" },
+          { "value": "Akademi/S1/S2", "label": "Akademi/S1/S2" }
+        ],
+        "required": true
+      },
+      {
+        "name": "marital_status",
+        "label": "Status Perkawinan",
+        "type": "radio",
+        "options": [
+          { "value": "Kawin", "label": "Kawin" },
+          { "value": "Belum Kawin", "label": "Belum Kawin" },
+          { "value": "Cerai", "label": "Cerai" }
+        ],
+        "required": true
+      },
+      {
+        "name": "nationality",
+        "label": "Kewarganegaraan",
+        "type": "radio",
+        "options": [
+          { "value": "WNI", "label": "WNI" },
+          { "value": "WNA", "label": "WNA" }
+        ],
+        "required": true
+      },
+      {
+        "name": "mobile_number",
+        "label": "Nomor HP/WA",
+        "type": "phone_number",
+        "inputMode": "numeric",
+        "required": true
+      },
+      {
+        "name": "religion",
+        "label": "Agama",
+        "type": "select",
+        "options": [
+          { "value": "", "label": "Pilih Agama" },
+          { "value": "Islam", "label": "Islam" },
+          { "value": "Kristen", "label": "Kristen" },
+          { "value": "Katolik", "label": "Katolik" },
+          { "value": "Hindu", "label": "Hindu" },
+          { "value": "Buddha", "label": "Buddha" },
+          { "value": "Konghucu", "label": "Konghucu" }
+        ],
+        "required": true
+      },
+      {
+        "name": "email",
+        "label": "Email",
+        "type": "email",
+        "required": true
+      }
+    ]
+  },
+  {
+    "title": "B. Data Pekerjaan",
+    "stepper": "Data Pekerjaan",
+    "fields": [
+      {
+        "name": "occupation",
+        "label": "Bidang Pekerjaan",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "employement_period",
+        "label": "Lama Bekerja (Bulan)",
+        "type": "employement_period",
+        "inputMode": "numeric",
+        "validation": {
+          "pattern": "^[0-9]*$"
+        },
+        "required": true
+      },
+      {
+        "name": "office_name",
+        "label": "Nama Kantor",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "job_title",
+        "label": "Pangkat/Jabatan",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "office_address",
+        "label": "Alamat Kantor",
+        "type": "text",
+        "required": true
+      }
+    ]
+  },
+  {
+    "title": "C. Penghasilan",
+    "stepper": "Penghasilan",
+    "fields": [
+      {
+        "name": "income_source",
+        "label": "Sumber Pendapatan Dari",
+        "type": "radio",
+        "options": [
+          { "value": "Gaji", "label": "Gaji" },
+          { "value": "Hasil Usaha", "label": "Hasil Usaha" },
+          { "value": "Hasil Investasi", "label": "Hasil Investasi" },
+          { "value": "Lainnya", "label": "Lainnya" }
+        ],
+        "required": true
+      },
+      {
+        "name": "income_amount",
+        "label": "Penghasilan / Bulan",
+        "type": "radio",
+        "options": [
+          { "value": "s.d 5jt", "label": "s.d 5jt" },
+          { "value": ">5jt s/d 10jt", "label": ">5jt s/d 10jt" },
+          { "value": ">10jt", "label": ">10jt" }
+        ],
+        "required": true
+      },
+      {
+        "name": "other_income_source",
+        "label": "Sumber Pendapatan Lainnya",
+        "type": "text",
+        "required":true
+      },
+      {
+        "name": "other_income_amount",
+        "label": "Jumlah",
+        "type": "money",
+        "inputMode": "numeric",
+        "validation": {
+          "pattern": "^[0-9]*$"
+        },
+        "required":true
+      }
+    ]
+  },
+  {
+    "title": "D. Buka Rekening",
+    "stepper": "Buka Rekening",
+    "fields": [
+      {
+        "name": "tenure",
+        "label": "Jenis Simpanan",
+        "type": "radio",
+        "options": [
+          { "value": "Gaji", "label": "Gaji" },
+          { "value": "Hasil Usaha", "label": "Hasil Usaha" }
+        ],
+        "required": true
+      },
+      {
+        "name": "loan_purpose",
+        "label": "Sumber Dana Pembukaan",
+        "type": "radio",
+        "options": [
+          { "value": "Tabungan", "label": "Tabungan" },
+          { "value": "Deposito", "label": "Deposito" }
+        ],
+        "required": true
+      },
+      {
+        "name": "plafond",
+        "label": "Setoran Awal",
+        "type": "money",
+        "inputMode": "numeric",
+        "required": true
+      },
+      {
+        "name": "spouse_name",
+        "label": "Nama Ahli Waris",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "status",
+        "label": "Hubungan Dengan Ahli Waris",
+        "type": "radio",
+        "options": [
+          { "value": "1", "label": "Suami" },
+          { "value": "2", "label": "Istri" },
+          { "value": "3", "label": "Anak" },
+          { "value": "4", "label": "Lainnya" }
+        ],
+        "required": true
+      }
+    ]
+  },
+  {
+    "title": "F. Upload KTP",
+    "stepper": "Upload KTP",
+    "fields": [
+      {
+        "type": "file",
+        "name": "id_photo_url",
+        "label": "Upload KTP",
+        "required": true,
+        "helpText": "Please upload a valid KTP image.",
+        "error": "id_photo_url",
+        "style": "block w-full text-sm text-gray-500 border border-gray-300 rounded-lg cursor-pointer bg-gray-50"
+      }
+    ]
+  },
+  {
+    "title": "G. Selfie",
+    "stepper": "Selfie KTP",
+    "fields": [
+      {
+        "type": "camera",
+        "name": "selfie_photo_url",
+        "label": "Selfie",
+        "required": true,
+        "helpText": "Capture a selfie while holding your KTP.",
+        "error": "selfie_photo_url",
+        "style": "w-full h-auto border border-gray-300 rounded-lg"
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "Open Camera",
+        "action": "startCamera",
+        "style": "py-2 px-4 text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm"
+      },
+      {
+        "type": "button",
+        "label": "Capture Selfie",
+        "action": "captureSelfie",
+        "style": "py-2 px-4 text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm"
+      },
+      {
+        "type": "button",
+        "label": "Stop Camera",
+        "action": "stopCamera",
+        "style": "py-2 px-4 text-white bg-red-500 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm",
+        "conditional": "cameraStream"
+      }
+    ],
+    "media": [
+      {
+        "type": "video",
+        "ref": "videoRef",
+        "style": "w-full h-auto border border-gray-300 rounded-lg",
+        "conditional": "cameraStream"
+      },
+      {
+        "type": "canvas",
+        "ref": "canvasRef",
+        "style": "display: none"
+      },
+      {
+        "type": "image",
+        "src": "selfie",
+        "alt": "Selfie",
+        "style": "w-full h-auto mt-4 border border-gray-300 rounded-lg",
+        "conditional": "selfie"
+      }
+    ]
+  },
+  {
+    "title": "H. Tanda Tangan",
+    "stepper": "Tanda Tangan",
+    "fields": [
+      {
+        "type": "signature",
+        "name": "signature_url",
+        "label": "Tanda Tangan",
+        "required": true,
+        "helpText": "Please sign above.",
+        "error": "signature_url",
+        "style": "border border-gray-300 rounded-lg p-2 h-24 w-full bg-gray-50 mb-2"
+      }
+    ]
+  },
+
+  {
+    "title": "E. Pernyataan",
+    "stepper": "Pernyataan",
+    "fields": [
+      {
+        "head": "Sehubungan dengan pengisian data diatas, saya menyatakan sebagai berikut:",
+        "type": "list",
+        "items": [
+          "Data yang saya sampaikan adalah benar.",
+          "Dana yang telah saya setor tidak berasal dari dan/atau untuk tujuan Pencucian Uang (Money Laundering) dan Pendanaan Terorisme.",
+          "Marketing dilarang menerima uang tunai dari nasabah.",
+          "Akan mematuhi seluruh ketentuan dan syarat umum pembukaan rekening yang berlaku di PT. BPR Tata Asia dengan segala perubahannya nanti.",
+          "Pencairan Deposito sebelum tanggal jatuh tempo akan dikenakan denda oleh bank sebesar 5% dari nominal deposito secara prorata."
+        ],
+        "style": "list-disc ml-6 mb-4"
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "Clear",
+        "action": "clearSignature",
+        "style": "py-2 px-4 text-white bg-red-500 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm"
+      },
+      {
+        "type": "button",
+        "label": "Previous",
+        "action": "handlePreviousStep",
+        "style": "bg-gray-500 text-white"
+      },
+      {
+        "type": "button",
+        "label": "Submit",
+        "action": "handleSubmit",
+        "style": "ml-auto bg-green-500 text-white"
+      }
+    ],
+    "media": [
+      {
+        "type": "signatureCanvas",
+        "ref": "sigCanvas",
+        "style": "border border-gray-300 rounded-lg p-2 h-24 w-full bg-gray-50 mb-2"
+      }
+    ],
+    "toast": {
+      "type": "success",
+      "message": "Data berhasil dikirim!",
+      "duration": 2000
+    }
+  }
+]

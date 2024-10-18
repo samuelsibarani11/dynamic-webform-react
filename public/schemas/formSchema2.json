@@ -1,0 +1,190 @@
+[
+    {
+      "stepper": "Himbauan",
+      "fields": [
+        {
+          "head": "Langkah Mengajukan KSM",
+          "type": "list-number",
+          "items": [
+            "Data yang saya sampaikan adalah benar.",
+            "Dana yang telah saya setor tidak berasal dari dan/atau untuk tujuan Pencucian Uang (Money Laundering) dan Pendanaan Terorisme.",
+            "Marketing dilarang menerima uang tunai dari nasabah.",
+            "Akan mematuhi seluruh ketentuan dan syarat umum pembukaan rekening yang berlaku di PT. BPR Tata Asia dengan segala perubahannya nanti.",
+            "Pencairan Deposito sebelum tanggal jatuh tempo akan dikenakan denda oleh bank sebesar 5% dari nominal deposito secara prorata."
+          ],
+          "desc": "Untuk mendapatkan keterangan lebih lanjut mengenai persyaratan pengajuan Kredit Sepeda Motor, silakan hubungi Kantor Cabang BPR dan/atau Kantor Cabang BPR Finance Layanan Pembiayaan Sepeda Motor terdekat atau Call Center Pengaduan di 0811 1111 7257.",
+          "desc2": " Pemohon dengan ini menyatakan telah membaca dan memahami sepenuhnya informasi produk Kredit Sepeda Motor yang akan diajukan dan bersedia untuk tunduk pada syarat dan ketentuan yang berlaku.",
+          "style": "list-disc ml-6 mb-4"
+        }
+      ]
+    },
+    {
+      "title": "A. Data Umum",
+      "stepper": "Data Umum",
+      "fields": [
+        {
+          "name": "fullname",
+          "label": "Nama Lengkap",
+          "type": "text"
+        },
+        {
+          "name": "birth_place",
+          "label": "Tempat Lahir",
+          "type": "text"
+        },
+        {
+          "name": "birth_date",
+          "label": "Tanggal Lahir",
+          "type": "date"
+        },
+        {
+          "name": "gender",
+          "label": "Jenis Kelamin",
+          "type": "radio",
+          "options": [
+            { "value": "Pria", "label": "Pria" },
+            { "value": "Wanita", "label": "Wanita" }
+          ]
+        },
+        {
+          "name": "id_type",
+          "label": "Dokumen Identitas",
+          "type": "select",
+          "options": [
+            { "value": "KTP", "label": "KTP" },
+            { "value": "SIM", "label": "SIM" }
+          ]
+        },
+        {
+          "name": "id_number",
+          "label": "Nomor Identitas",
+          "type": "id_number",
+          "inputMode": "numeric",
+          "pattern": "[0-9]*",
+          "maxLength": 16
+        },
+  
+        {
+          "name": "address",
+          "label": "Alamat KTP",
+          "type": "address"
+        },
+        {
+          "name": "domicili_address",
+          "label": "Alamat Domisili",
+          "type": "address",
+          "disabled": true
+        },
+  
+        {
+          "name": "mother_name",
+          "label": "Nama Gadis Ibu Kandung",
+          "type": "text"
+        },
+        {
+          "name": "home_status",
+          "label": "Status Rumah",
+          "type": "radio",
+          "options": [
+            { "value": "Milik Sendiri", "label": "Milik Sendiri" },
+            { "value": "Kontrak/Sewa", "label": "Kontrak/Sewa" },
+            { "value": "Milik Keluarga", "label": "Milik Keluarga" }
+          ]
+        },
+        {
+          "name": "last_education",
+          "label": "Pendidikan Terakhir",
+          "type": "radio",
+          "options": [
+            { "value": "SD", "label": "SD" },
+            { "value": "SMP", "label": "SMP" },
+            { "value": "SMA", "label": "SMA" },
+            { "value": "Akademi/S1/S2", "label": "Akademi/S1/S2" }
+          ]
+        },
+        {
+          "name": "marital_status",
+          "label": "Status Perkawinan",
+          "type": "radio",
+          "options": [
+            { "value": "Kawin", "label": "Kawin" },
+            { "value": "Belum Kawin", "label": "Belum Kawin" },
+            { "value": "Cerai", "label": "Cerai" }
+          ]
+        },
+        {
+          "name": "nationality",
+          "label": "Kewarganegaraan",
+          "type": "radio",
+          "options": [
+            { "value": "WNI", "label": "WNI" },
+            { "value": "WNA", "label": "WNA" }
+          ]
+        },
+        {
+          "name": "mobile_number",
+          "label": "Nomor HP/WA",
+          "type": "phone_number",
+          "inputMode": "numeric"
+        },
+        {
+          "name": "religion",
+          "label": "Agama",
+          "type": "select",
+          "options": [
+            { "value": "", "label": "Pilih Agama" },
+            { "value": "Islam", "label": "Islam" },
+            { "value": "Kristen", "label": "Kristen" },
+            { "value": "Katolik", "label": "Katolik" },
+            { "value": "Hindu", "label": "Hindu" },
+            { "value": "Buddha", "label": "Buddha" },
+            { "value": "Konghucu", "label": "Konghucu" }
+          ]
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "email"
+        }
+      ]
+    },
+  
+    {
+      "title": "B. Data Pekerjaan",
+      "stepper": "Data Pekerjaan",
+      "fields": [
+        {
+          "name": "occupation",
+          "label": "Bidang Pekerjaan",
+          "type": "text"
+        },
+        {
+          "name": "employement_period",
+          "label": "Lama Bekerja (Bulan)",
+          "type": "employement_period",
+          "inputMode": "numeric",
+          "validation": {
+            "pattern": "^[0-9]*$"
+          }
+        },
+        {
+          "name": "office_name",
+          "label": "Nama Kantor",
+          "type": "text"
+        },
+        {
+          "name": "job_title",
+          "label": "Pangkat/Jabatan",
+          "type": "text"
+        },
+        {
+          "name": "office_address",
+          "label": "Alamat Kantor",
+          "type": "text"
+        }
+      ]
+    }
+  
+ 
+  ]
+  
